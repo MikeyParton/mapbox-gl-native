@@ -19,7 +19,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -29,7 +28,6 @@ import com.mapbox.mapboxsdk.MapStrictMode;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.R;
 import com.mapbox.mapboxsdk.annotations.Annotation;
-import com.mapbox.mapboxsdk.annotations.MarkerViewManager;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.MapboxConstants;
@@ -166,17 +164,15 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     Projection proj = new Projection(nativeMapView);
     UiSettings uiSettings = new UiSettings(proj, focalInvalidator, compassView, attrView, logoView, getPixelRatio());
     LongSparseArray<Annotation> annotationsArray = new LongSparseArray<>();
-    MarkerViewManager markerViewManager = new MarkerViewManager((ViewGroup) findViewById(R.id.markerViewContainer));
     IconManager iconManager = new IconManager(nativeMapView);
     Annotations annotations = new AnnotationContainer(nativeMapView, annotationsArray);
-    Markers markers = new MarkerContainer(nativeMapView, this, annotationsArray, iconManager, markerViewManager);
+    Markers markers = new MarkerContainer(nativeMapView, annotationsArray, iconManager);
     Polygons polygons = new PolygonContainer(nativeMapView, annotationsArray);
     Polylines polylines = new PolylineContainer(nativeMapView, annotationsArray);
     ShapeAnnotations shapeAnnotations = new ShapeAnnotationContainer(nativeMapView, annotationsArray);
-    AnnotationManager annotationManager = new AnnotationManager(nativeMapView, this, annotationsArray,
-      markerViewManager, iconManager, annotations, markers, polygons, polylines, shapeAnnotations);
-    Transform transform = new Transform(nativeMapView, annotationManager.getMarkerViewManager(),
-      cameraChangeDispatcher);
+    AnnotationManager annotationManager = new AnnotationManager(this, annotationsArray,
+      iconManager, annotations, markers, polygons, polylines, shapeAnnotations);
+    Transform transform = new Transform(nativeMapView, cameraChangeDispatcher);
 
     // MapboxMap
     mapboxMap = new MapboxMap(nativeMapView, transform, uiSettings, proj, registerTouchListener,
@@ -1519,7 +1515,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
           initialLoad = false;
           mapboxMap.onPreMapReady();
           onMapReady();
-          mapboxMap.onPostMapReady();
         } else {
           mapboxMap.onFinishLoadingStyle();
         }
