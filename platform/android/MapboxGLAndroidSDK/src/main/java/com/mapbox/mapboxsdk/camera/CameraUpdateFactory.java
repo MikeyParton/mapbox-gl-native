@@ -334,24 +334,9 @@ public final class CameraUpdateFactory {
 
     @Override
     public CameraPosition getCameraPosition(@NonNull MapboxMap mapboxMap) {
-      UiSettings uiSettings = mapboxMap.getUiSettings();
-      Projection projection = mapboxMap.getProjection();
-
-      // Calculate the new center point
-      float viewPortWidth = uiSettings.getWidth();
-      float viewPortHeight = uiSettings.getHeight();
-      PointF targetPoint = new PointF(viewPortWidth / 2 + x, viewPortHeight / 2 + y);
-
-      // Convert point to LatLng
-      LatLng latLng = projection.fromScreenLocation(targetPoint);
-
-      CameraPosition previousPosition = mapboxMap.getCameraPosition();
-      return new CameraPosition.Builder()
-        .target(latLng != null ? latLng : previousPosition.target)
-        .zoom(previousPosition.zoom)
-        .tilt(previousPosition.tilt)
-        .bearing(previousPosition.bearing)
-        .build();
+      mapboxMap.moveBy(x, y);
+      // cancel ongoing camera handling in transform
+      return null;
     }
 
     @Override
