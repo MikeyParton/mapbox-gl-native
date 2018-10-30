@@ -878,6 +878,8 @@ MGL_EXPORT IB_DESIGNABLE
  @param animated Specify `YES` if you want the map view to animate the change to
     the new viewpoint or `NO` if you want the map to display the new viewpoint
     immediately.
+ 
+ @related <a href="https://www.mapbox.com/ios-sdk/maps/examples/camera-animation/">Camera animation example</a>
  */
 - (void)setCamera:(MGLMapCamera *)camera animated:(BOOL)animated;
 
