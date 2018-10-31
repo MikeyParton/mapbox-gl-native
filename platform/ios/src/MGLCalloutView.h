@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
  
  To receive updates from an object that conforms to the `MGLCalloutView` protocol,
  use the optional methods available in the `MGLCalloutViewDelegate` protocol.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a>
  */
 @protocol MGLCalloutView <NSObject>
 

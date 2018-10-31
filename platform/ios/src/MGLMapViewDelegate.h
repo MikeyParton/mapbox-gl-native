@@ -243,6 +243,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param mapView The map view that has just loaded a style.
  @param style The style that was loaded.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a>
  */
 - (void)mapView:(MGLMapView *)mapView didFinishLoadingStyle:(MGLStyle *)style;
 
@@ -343,6 +345,8 @@ NS_ASSUME_NONNULL_BEGIN
     displayed.
  @return The annotation image object to display for the given annotation or
     `nil` if you want to display the default marker image or an annotation view.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/marker-image/">Mark a place on the map with an image</a>
  */
 - (nullable MGLAnnotationImage *)mapView:(MGLMapView *)mapView imageForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -375,6 +379,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param mapView The map view rendering the shape annotation.
  @param annotation The annotation being rendered.
  @return A color to use for the shape outline.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a>
  */
 - (UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation;
 
@@ -429,6 +435,8 @@ NS_ASSUME_NONNULL_BEGIN
     displayed.
  @return The view object to display for the given annotation or `nil` if you
     want to display an annotation image instead.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a>
  */
 - (nullable MGLAnnotationView *)mapView:(MGLMapView *)mapView viewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -470,6 +478,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param mapView The map view containing the annotation.
  @param annotation The annotation that was selected.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a>
  */
 - (void)mapView:(MGLMapView *)mapView didSelectAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -544,6 +554,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param annotation The object representing the annotation.
  @return A Boolean value indicating whether the annotation should show a
     callout.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/marker-image/">Mark a place on the map with an image</a>
  */
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id <MGLAnnotation>)annotation;
 
@@ -561,6 +573,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param annotation The object representing the annotation.
  @return A view conforming to the `MGLCalloutView` protocol, or `nil` to use the
     default callout view.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a>
  */
 - (nullable id <MGLCalloutView>)mapView:(MGLMapView *)mapView calloutViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -587,6 +601,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param mapView The map view presenting the annotation callout.
  @param annotation The object representing the annotation with the callout.
  @return The accessory view to display.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a>
  */
 - (nullable UIView *)mapView:(MGLMapView *)mapView leftCalloutAccessoryViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -613,6 +629,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param mapView The map view presenting the annotation callout.
  @param annotation The object representing the annotation with the callout.
  @return The accessory view to display.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a>
  */
 - (nullable UIView *)mapView:(MGLMapView *)mapView rightCalloutAccessoryViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -638,6 +656,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param mapView The map view containing the specified annotation.
  @param annotation The annotation whose accessory view was tapped.
  @param control The control that was tapped.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a>
  */
 - (void)mapView:(MGLMapView *)mapView annotation:(id <MGLAnnotation>)annotation calloutAccessoryControlTapped:(UIControl *)control;
 
@@ -656,6 +676,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param mapView The map view containing the specified annotation.
  @param annotation The annotation whose callout was tapped.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a>
  */
 - (void)mapView:(MGLMapView *)mapView tapOnCalloutForAnnotation:(id <MGLAnnotation>)annotation;
 

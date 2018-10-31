@@ -17,6 +17,8 @@ MGL_EXPORT
  Returns the associated map view.
 
  The value of this property is nil during initialization.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/user-location-annotation/">Customize the user location annotation</a>
  */
 @property (nonatomic, readonly, weak, nullable) MGLMapView *mapView;
 

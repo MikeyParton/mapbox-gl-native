@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
  the user’s current location. You do not create instances of this class
  directly. Instead, you retrieve an existing `MGLUserLocation` object from the
  `userLocation` property of the map view displayed in your application.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/user-location-annotation/">Customize the user location annotation</a>
  */
 MGL_EXPORT
 @interface MGLUserLocation : NSObject <MGLAnnotation, NSSecureCoding>

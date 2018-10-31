@@ -222,6 +222,8 @@ MGL_EXPORT
     if it should display itself as unselected.
  @param animated `YES` if the change in selection state is animated; `NO` if the
     change is immediate.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-views/">Annotation views</a>
  */
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 

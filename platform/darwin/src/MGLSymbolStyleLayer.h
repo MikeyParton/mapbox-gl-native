@@ -370,6 +370,8 @@ typedef NS_ENUM(NSUInteger, MGLTextTranslationAnchor) {
  layer.predicate = NSPredicate(format: "%K == %@", "venue-type", "coffee")
  mapView.style?.addLayer(layer)
  ```
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a>
  */
 MGL_EXPORT
 @interface MGLSymbolStyleLayer : MGLVectorStyleLayer

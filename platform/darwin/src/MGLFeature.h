@@ -174,6 +174,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  An `MGLPointFeature` object associates a point shape with an optional
  identifier and attributes.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a>
  */
 MGL_EXPORT
 @interface MGLPointFeature : MGLPointAnnotation <MGLFeature>

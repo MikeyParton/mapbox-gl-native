@@ -398,6 +398,8 @@ MGL_EXPORT IB_DESIGNABLE
  Changing the value of this property updates the map view with an animated
  transition. If you don’t want to animate the change, use the
  `-setUserTrackingMode:animated:` method instead.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/user-location-annotation/">Customize the user location annotation</a>
  */
 @property (nonatomic, assign) MGLUserTrackingMode userTrackingMode;
 
@@ -879,7 +881,7 @@ MGL_EXPORT IB_DESIGNABLE
     the new viewpoint or `NO` if you want the map to display the new viewpoint
     immediately.
  
- @related <a href="https://www.mapbox.com/ios-sdk/maps/examples/camera-animation/">Camera animation example</a>
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/camera-animation/">Camera animation example</a>
  */
 - (void)setCamera:(MGLMapCamera *)camera animated:(BOOL)animated;
 
@@ -1267,6 +1269,8 @@ MGL_EXPORT IB_DESIGNABLE
     annotation image object using the `-mapView:imageForAnnotation:` method.
  @return An annotation image object with the given identifier, or `nil` if no
     such object exists in the reuse queue.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a>
  */
 - (nullable __kindof MGLAnnotationImage *)dequeueReusableAnnotationImageWithIdentifier:(NSString *)identifier;
 

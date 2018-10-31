@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  An object that adopts this protocol must implement the `coordinate` property.
  The other methods of this protocol are optional.
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-views/">Annotation views</a>
  */
 @protocol MGLAnnotation <NSObject>
 

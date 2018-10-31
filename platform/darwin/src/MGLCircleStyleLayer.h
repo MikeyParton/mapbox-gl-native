@@ -91,6 +91,8 @@ typedef NS_ENUM(NSUInteger, MGLCircleTranslationAnchor) {
  layer.predicate = NSPredicate(format: "%K == %@", "marital-status", "married")
  mapView.style?.addLayer(layer)
  ```
+ 
+ @see <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a>
  */
 MGL_EXPORT
 @interface MGLCircleStyleLayer : MGLVectorStyleLayer
