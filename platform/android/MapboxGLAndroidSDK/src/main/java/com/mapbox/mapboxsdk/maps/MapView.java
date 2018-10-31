@@ -1391,11 +1391,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
   private class GesturesManagerInteractionListener implements MapboxMap.OnGesturesManagerInteractionListener {
 
     @Override
-    public void onSetMapClickListener(MapboxMap.OnMapClickListener listener) {
-      mapGestureDetector.setOnMapClickListener(listener);
-    }
-
-    @Override
     public void onAddMapClickListener(MapboxMap.OnMapClickListener listener) {
       mapGestureDetector.addOnMapClickListener(listener);
     }
@@ -1406,11 +1401,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     }
 
     @Override
-    public void onSetMapLongClickListener(MapboxMap.OnMapLongClickListener listener) {
-      mapGestureDetector.setOnMapLongClickListener(listener);
-    }
-
-    @Override
     public void onAddMapLongClickListener(MapboxMap.OnMapLongClickListener listener) {
       mapGestureDetector.addOnMapLongClickListener(listener);
     }
@@ -1418,26 +1408,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     @Override
     public void onRemoveMapLongClickListener(MapboxMap.OnMapLongClickListener listener) {
       mapGestureDetector.removeOnMapLongClickListener(listener);
-    }
-
-    @Override
-    public void onSetScrollListener(MapboxMap.OnScrollListener listener) {
-      mapGestureDetector.setOnScrollListener(listener);
-    }
-
-    @Override
-    public void onAddScrollListener(MapboxMap.OnScrollListener listener) {
-      mapGestureDetector.addOnScrollListener(listener);
-    }
-
-    @Override
-    public void onRemoveScrollListener(MapboxMap.OnScrollListener listener) {
-      mapGestureDetector.removeOnScrollListener(listener);
-    }
-
-    @Override
-    public void onSetFlingListener(MapboxMap.OnFlingListener listener) {
-      mapGestureDetector.setOnFlingListener(listener);
     }
 
     @Override

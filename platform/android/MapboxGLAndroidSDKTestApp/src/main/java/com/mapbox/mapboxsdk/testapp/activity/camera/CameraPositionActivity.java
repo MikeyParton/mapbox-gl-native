@@ -60,7 +60,7 @@ public class CameraPositionActivity extends FragmentActivity implements OnMapRea
     fab.setOnClickListener(this);
 
     // listen to long click events to toggle logging camera changes
-    mapboxMap.setOnMapLongClickListener(this);
+    mapboxMap.addOnMapLongClickListener(this);
   }
 
   @Override
@@ -123,6 +123,9 @@ public class CameraPositionActivity extends FragmentActivity implements OnMapRea
   @Override
   protected void onDestroy() {
     super.onDestroy();
+    if (mapboxMap != null) {
+      mapboxMap.removeOnMapLongClickListener(this);
+    }
     mapView.onDestroy();
   }
 
